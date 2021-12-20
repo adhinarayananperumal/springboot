@@ -37,7 +37,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public CustomerPojo getCustomerint(int id) {
+	public CustomerPojo getCustomer(int id) {
 		Customer customer = customerRepository.getById(id);
 
 		CustomerPojo customerPojo = new CustomerPojo();
@@ -64,6 +64,16 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 
 		return customerPojoList;
+	}
+
+	@Override
+	public void update(CustomerPojo customerPojo) {
+
+		Customer customer = customerRepository.getById(customerPojo.getCid());
+		customer.setCustomerName(customerPojo.getCustomerName());
+		customer.setAge(customerPojo.getAge());
+
+
 	}
 
 }
