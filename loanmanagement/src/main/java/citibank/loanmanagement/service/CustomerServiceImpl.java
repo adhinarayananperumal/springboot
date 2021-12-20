@@ -68,12 +68,15 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public void update(CustomerPojo customerPojo) {
-
 		Customer customer = customerRepository.getById(customerPojo.getCid());
 		customer.setCustomerName(customerPojo.getCustomerName());
 		customer.setAge(customerPojo.getAge());
 
+	}
 
+	@Override
+	public void delete(int cusId) {
+		customerRepository.deleteById(Integer.valueOf(cusId));
 	}
 
 }

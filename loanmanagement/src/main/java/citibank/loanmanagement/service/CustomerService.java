@@ -13,6 +13,9 @@ public interface CustomerService {
 	List<CustomerPojo> listCustomer ();
 	
 	void update (CustomerPojo customerPojo);
+	
+	void delete (int cusId);
+
 
 
 
